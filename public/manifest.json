@@ -1,0 +1,74 @@
+{
+  "name": "Public Speaking Grader",
+  "short_name": "Grader",
+  "description": "Comprehensive grading app for Symposium Research, Informative Speech, and Persuasive Speech presentations",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#0a0b0f",
+  "background_color": "#ffffff",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%236366f1' width='192' height='192'/><text x='50%' y='50%' font-size='100' fill='white' text-anchor='middle' dominant-baseline='middle' font-weight='bold'>📊</text></svg>",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect fill='%236366f1' width='512' height='512'/><text x='50%' y='50%' font-size='280' fill='white' text-anchor='middle' dominant-baseline='middle' font-weight='bold'>📊</text></svg>",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["education", "productivity"],
+  "screenshots": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 540 720'><rect fill='%230a0b0f' width='540' height='720'/><text x='50%' y='50%' font-size='60' fill='%236366f1' text-anchor='middle' dominant-baseline='middle'>Public Speaking Grader</text></svg>",
+      "sizes": "540x720",
+      "type": "image/svg+xml"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Symposium Research",
+      "short_name": "Symposium",
+      "description": "Grade symposium research presentations",
+      "url": "/?assignment=symposium",
+      "icons": [
+        {
+          "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 96'><rect fill='%233b82f6' width='96' height='96'/><text x='50%' y='50%' font-size='50' fill='white' text-anchor='middle' dominant-baseline='middle'>🎤</text></svg>",
+          "sizes": "96x96",
+          "type": "image/svg+xml"
+        }
+      ]
+    },
+    {
+      "name": "Informative Speech",
+      "short_name": "Informative",
+      "description": "Grade informative speeches",
+      "url": "/?assignment=informative",
+      "icons": [
+        {
+          "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 96'><rect fill='%236366f1' width='96' height='96'/><text x='50%' y='50%' font-size='50' fill='white' text-anchor='middle' dominant-baseline='middle'>ℹ️</text></svg>",
+          "sizes": "96x96",
+          "type": "image/svg+xml"
+        }
+      ]
+    },
+    {
+      "name": "Persuasive Speech",
+      "short_name": "Persuasive",
+      "description": "Grade persuasive speeches",
+      "url": "/?assignment=persuasive",
+      "icons": [
+        {
+          "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 96'><rect fill='%23dc2626' width='96' height='96'/><text x='50%' y='50%' font-size='50' fill='white' text-anchor='middle' dominant-baseline='middle'>🔥</text></svg>",
+          "sizes": "96x96",
+          "type": "image/svg+xml"
+        }
+      ]
+    }
+  ]
+}

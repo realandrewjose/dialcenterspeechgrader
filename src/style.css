@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Global resets ─────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  font-family: 'Outfit', 'Segoe UI', sans-serif;
+  background: #07090f;
+  color: #e2e8f0;
+  margin: 0;
+}
+
+/* ── Scrollbar ─────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #1e2a3d; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #2d4260; }
+
+/* ── Hide number input spinners ────────────────────────────── */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; }
+input[type=number] { -moz-appearance: textfield; }
+
+/* ── Placeholder ───────────────────────────────────────────── */
+::placeholder { color: #374151; }
+
+/* ── Electron input fix: override inherited user-select:none ── */
+input, textarea { -webkit-user-select: text; user-select: text; }
+
+/* ── Focus ring ────────────────────────────────────────────── */
+textarea:focus, input:focus { outline: none; }
+textarea:focus {
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.25) !important;
+  border-color: rgba(99, 102, 241, 0.4) !important;
+}
+input:focus {
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2) !important;
+}
+
+/* ── Animations ────────────────────────────────────────────── */
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-3px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes scoreGlow {
+  0%, 100% { text-shadow: 0 0 20px rgba(245,158,11,0.3); }
+  50%       { text-shadow: 0 0 40px rgba(245,158,11,0.6); }
+}
+
+.section-body { animation: slideDown 0.2s cubic-bezier(0.4, 0, 0.2, 1); }
+.fade-in      { animation: fadeIn 0.2s ease; }
+.anim         { animation: fadeIn 0.18s ease; }
+
+/* ── Mark buttons ──────────────────────────────────────────── */
+.mark-btn {
+  transition: all 0.12s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer; border: none;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.mark-btn:hover  { transform: scale(1.1); }
+.mark-btn:active { transform: scale(0.92); }
+
+/* ── Progress bar ──────────────────────────────────────────── */
+.prog { transition: width 0.45s cubic-bezier(0.4, 0, 0.2, 1); }
+
+/* ── Section card ──────────────────────────────────────────── */
+.section-card { transition: box-shadow 0.2s ease; }
+.section-card:hover { box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4); }
+
+/* ── Score glow ────────────────────────────────────────────── */
+.score-num { animation: scoreGlow 3s ease-in-out infinite; }
+
+/* ── Print-only report (hidden on screen) ──────────────────── */
+.print-only { display: none; }
+
+/* ── Print ─────────────────────────────────────────────────── */
+@media print {
+  /* Hide all interactive UI */
+  .no-print { display: none !important; }
+
+  /* Transparent grader shell so dark background doesn't bleed */
+  .grader-wrap {
+    background: transparent !important;
+    min-height: 0 !important;
+  }
+
+  /* Show the clean report */
+  .print-only {
+    display: block !important;
+    background: #fff !important;
+    color: #000 !important;
+  }
+
+  /* Clean page */
+  body, html {
+    background: #fff !important;
+    color: #000 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 12pt !important;
+  }
+
+  /* Page margins */
+  @page {
+    margin: 18mm 18mm 18mm 18mm;
+    size: letter portrait;
+  }
+
+  /* Prevent orphaned section headers */
+  .pr-section { break-inside: avoid; page-break-inside: avoid; }
+}

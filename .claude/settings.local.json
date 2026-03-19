@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(taskkill /F /IM \"Public Speaking Grader.exe\")",
+      "Bash(cmd.exe /c \"taskkill /F /IM \"\"Public Speaking Grader.exe\"\"\")",
+      "Bash(cmd.exe /c \"taskkill /F /IM \"\"Public Speaking Grader.exe\"\" 2>&1 & echo done\")",
+      "Bash(powershell.exe -Command \"Stop-Process -Name ''Public Speaking Grader'' -Force -ErrorAction SilentlyContinue; Write-Host ''done''\")",
+      "Bash(npm run electron-build)",
+      "Bash(npx asar list release/win-unpacked/resources/app.asar)",
+      "Bash(grep -E \"^\\\\\\\\dist\")",
+      "Bash(npx asar extract-file release/win-unpacked/resources/app.asar dist/index.html)",
+      "Bash(powershell.exe -Command \":*)",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\(''''scripts:'''', json.dumps\\(d.get\\(''''scripts'''',{}\\), indent=2\\)\\); print\\(''''name:'''', d.get\\(''''name''''\\)\\)\")",
+      "Bash(npm run:*)"
+    ]
+  }
+}
