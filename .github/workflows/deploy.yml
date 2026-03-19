@@ -35,6 +35,9 @@ jobs:
           # If this is a username.github.io repo, set BASE_PATH to /
           BASE_PATH: /${{ github.event.repository.name }}/
 
+      - name: Disable Jekyll (allow _assets to be served)
+        run: touch web-build/.nojekyll
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: web-build
