@@ -1,8 +1,8 @@
 const CACHE_NAME = 'public-speaking-grader-v1';
 const urlsToCache = [
-  '/',
-  '/index.html',
-  '/manifest.json',
+  './',
+  './index.html',
+  './manifest.json',
 ];
 
 self.addEventListener('install', (event) => {
@@ -57,7 +57,7 @@ self.addEventListener('fetch', (event) => {
       });
     }).catch(() => {
       // Return a fallback offline page if needed
-      return caches.match('/index.html');
+      return caches.match('./index.html');
     })
   );
 });
